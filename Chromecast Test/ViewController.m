@@ -22,7 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _castController = [[GoogleCastController alloc]initWithAppId:@"B948BDAD"];
+    
+    _castController = [[GoogleCastController alloc]initWithAppId:@"B948BDAD"];// add your own appID here
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(devicesFound) name:(NSString*)GoogleCastDeviceHasComeOnlineNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnected) name:(NSString*)GoogleCastSelectedDeviceDisconnectedNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnected) name:(NSString*)GoogleCastDeviceConnectedNotification object:nil];
